@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Data Bindin</title>
+	
+</head>
+<body>
+
+	<div id="root">	
+		<!-- <input type="text" id="input" v-model="message"> -->
+
+		<p>	The value of the input is: {{names}}</p>
+		<ul>	
+			<li v-for="value, index in names"> Index: {{ index }} & value: {{ value }}	</li>
+		</ul>
+
+		<ul>	
+			<li v-for="value, index in names" v-text="value">
+		</ul>
+
+		<input type="text" class="text">
+		<input id="button" value="Add Text" type="button">
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#root',
+			data: {
+			     names: ["Hello","World"]
+			},
+			mounted(){
+				document.querySelector('#button').addEventListener('click',() => {
+					let name = document.querySelector(".text");
+					app.names.push(name.value)
+					name.value = ''
+				})
+			}
+
+		})
+
+
+		/*document.querySelector('#button').addEventListener('click',() => {
+			let name = document.querySelector(".text");
+			app.names.push(name.value)
+			name.value = ''
+		})*/
+
+	</script>
+</body>
+</html>

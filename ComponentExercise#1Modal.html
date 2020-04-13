@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Component Within Component</title>
+	<link rel="stylesheet" type="text/css" href="bulma.css">
+	<style type="text/css">
+		
+		body{
+			padding-top: 40px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="root" class="container">
+		<modal v-if="showModal"></modal>
+		<button class="button" v-on:click="showModal = !showModal">Show Modal</button>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="ComponentExercise1Modal.js"></script>
+</body>
+</html>
